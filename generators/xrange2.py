@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Foobar.py: Description of what foobar does."""
+'''xrange.py: userland version of xrange'''
 
 __author__      = "@Code.on.Tap"
 __copyright__   = "Copyright 2019"
@@ -10,25 +10,18 @@ __source__      = "https://github.com/code-on-tap/examples/generators/xrange.py"
 
 class xrange2( object ):
   def __init__( self, *args ):
-    if not args:
+    if not args or len( args ) > 3:
       raise ValueError()
-  
+    
     self.i = None
-    n = len( args )
-    if n == 1:
+    if len( args ) == 1:
       self.start = 0
       self.stop = args[0]
       self.step = 1
-    elif n == 2:
-      self.start = args[0]
-      self.stop = args[1]
-      self.step = 1
-    elif n == 3:
-      self.start = args[0]
-      self.stop = args[1]
-      self.step = args[2]
     else:
-      raise ValueError()
+      self.start = args[0]
+      self.stop = args[1]
+      self.step = args[2] if args else 1
   
   def __iter__( self ):
     self.i = self.start - self.step
