@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-'''xrange.py: userland version of xrange'''
+'''thread_app2.py: a multithreaded app, v2'''
 
 __author__      = "@Code.on.Tap"
 __copyright__   = "Copyright 2019"
